@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MVCSportStore.Data.Tables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace MVCSportStore.Data
         {
 
         }
+        public DbSet<Product> Products { get; set; }
     }
 }
