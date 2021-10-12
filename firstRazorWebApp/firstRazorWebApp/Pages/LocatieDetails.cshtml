@@ -1,0 +1,16 @@
+﻿@page
+@model firstRazorWebApp.Pages.LocatieDetailsModel
+@{
+    var id = Model.LocationId;
+    var locationRecord = Data.Databank.Locaties.Where(x => x.LocationId == id).FirstOrDefault();
+    var postcode = locationRecord.PostalCode;
+    var city = locationRecord.City;
+}
+<div>
+    <br />
+    Id: @id
+    <br />
+    Postcode: @postcode
+    <br />
+    City: @city
+</div>

@@ -1,0 +1,34 @@
+﻿@page
+@model firstRazorWebApp.Pages.KlantLocatieOverzichtModel
+@{
+    var locaties = firstRazorWebApp.Data.Databank.Locaties;
+    var klanten = firstRazorWebApp.Data.Databank.Klanten;
+}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th scope="col">Klant</th>
+            <th scope="col">City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var klant in klanten)
+        {
+            string plaats = "";
+
+            foreach(var locatie in locaties)
+            {
+                if(locatie.LocationId == klant.KlantId)
+                {
+                    plaats = locatie.City;
+                }
+            }
+            <tr>
+               
+                <td>@klant.KlantNaam</td>
+                <td>@plaats</td>
+            </tr>
+        }
+    </tbody>
+</table>

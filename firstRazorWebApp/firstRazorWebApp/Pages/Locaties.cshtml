@@ -1,0 +1,35 @@
+﻿@page
+@model firstRazorWebApp.Pages.LocatiesModel
+@{
+    var locaties = firstRazorWebApp.Data.Databank.Locaties;
+    var rowId = 0;
+}
+<div class="text-center">
+    <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+    <a asp-page="/NieuweLocatie">Nieuwe Locatie</a>
+    <h1 class="display-4">Locatie</h1>
+    <p>Dit is onze locatie razor page</p>
+   
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">LocationId</th>
+                <th scope="col">Postcode</th>
+                <th scope="col">City</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var locatie in locaties)
+            {
+                //rowId++;
+            <tr>
+               
+                <td>@locatie.LocationId</td>
+                <td>@locatie.PostalCode</td>
+                <td>@locatie.City</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

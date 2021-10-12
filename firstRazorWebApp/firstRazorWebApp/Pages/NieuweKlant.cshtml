@@ -1,0 +1,28 @@
+﻿@page
+@model firstRazorWebApp.Pages.NieuweKlantModel
+@{
+    var locaties = firstRazorWebApp.Data.Databank.Locaties;
+}
+<form method="post">
+    <fieldset>
+        <legend>Klant toevoegen</legend>
+        <div>
+
+            <label for="Klant">Klantnaam:</label>
+            <input type="text" name="Klant" />
+            <br />
+            <label for="Locatie">Locatie:</label>
+            <select class="form-control" id="Locaties" name="Locaties">
+                <option></option>
+                @foreach (var locatie in locaties)
+                {
+                    <option>@locatie.City</option>
+                }
+            </select>
+            <div>
+                <label>&nbsp;</label>
+                <input type="submit" value="Submit" class="submit" />
+            </div>
+        </div>
+    </fieldset>
+</form>
